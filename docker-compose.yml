@@ -1,0 +1,35 @@
+version: "3.8"
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+services:
+  ### Postgres
+  postgres:
+    build:
+      context: ./docker/postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    restart: always
+    networks:
+      - backend
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: canvas-lms
+  ### Redis
+  redis:
+    build:
+      context: ./docker/redis
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - backend

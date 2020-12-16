@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Canvas LMS",
+            "username": "postgres",
+            "password": "postgres",
+            "database": "canvas-lms",
+            "group": "Canvas"
+        }
+    ]
+}
